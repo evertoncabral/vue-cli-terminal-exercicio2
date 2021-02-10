@@ -10,18 +10,21 @@
 
 <body>
     <div id="app">
-
-
         {{message}}
-        <button @click="message = 'oi oi oi | texto substituído'"> substituir texto </button>
+        <button @click="message = 'oi oi oi | texto substituído'">
+            substituir texto
+        </button>
 
-        <br><br><br>
+        <br /><br /><br />
 
         {{count}}
-        <button @click="count ++"> Incrementador</button>
+        <button @click="count ++">Incrementador</button>
 
+        <br /><br /><br />
+
+        {{messageCount}}
+        <button @click="count ++">Incrementador</button>
     </div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
     <script>
@@ -30,7 +33,12 @@
             data: {
                 message: "hello world ",
                 count: 0,
-            }
+            },
+            computed: {
+                messageCount() {
+                    return `${this.message}  ==> ${this.count}`;
+                },
+            },
         });
     </script>
 </body>
