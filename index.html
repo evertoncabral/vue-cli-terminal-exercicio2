@@ -10,7 +10,15 @@
 
 <body>
     <div id="app">
-        oi 21
+
+
+        {{message}}
+        <button @click="message = 'oi oi oi | texto substituído'"> substituir texto </button>
+
+        <br><br><br>
+
+        {{count}}
+        <button @click="count ++"> Incrementador</button>
 
     </div>
 
@@ -20,7 +28,8 @@
         const app = new Vue({
             el: "#app",
             data: {
-
+                message: "hello world ",
+                count: 0,
             }
         });
     </script>
